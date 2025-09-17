@@ -11,14 +11,25 @@ def main():
         print("6. square root")
         print("7. exit")
 
-        choice = int(input("Enter your choice 1-7"))
+        while True:
+            try:
+                choice = int(input("Enter your choice (1-7): "))
+                if 1 <= choice <= 7:
+                    break
+                else:
+                    print("Please enter a number between 1 and 7.")
+            except ValueError:
+                print("Invalid input. Please enter a number.")
 
         if choice == 7:
             print("Goodbye!")
             break
         elif choice == 6:
-            print(square_root(num1))
-            break
+            if (num1 > 0):
+                print(square_root(num1))
+                break
+            else:
+                print ("cannot take square root of negative numbers")
         elif choice in [1,2,3,4,5]:
             try:
                 num1 = float(input("enter your first number!"))
@@ -36,9 +47,15 @@ def main():
                 print(multiply(num1,num2))
                 break
             elif choice == 4:
-                print(divide(num1,num2))
-                break
+                if num2 > 0:
+                    print(divide(num1,num2))
+                    break
+                else:
+                    print("Cannot divide by 0")
+                    continue
             elif choice == 5:
                 print(power(num1,num2))
                 break
+if __name__ == "__main__":
+    main()
         

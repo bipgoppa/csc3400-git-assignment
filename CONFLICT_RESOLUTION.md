@@ -1,0 +1,1 @@
+Two changes were made conflicting in the calculator script. Someone changed the calculator multiply function to use num5 instead of num1. This was assumed to be an error, and num1 was kept.
